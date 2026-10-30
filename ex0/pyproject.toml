@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ex0"
+version = "0.1.0"
+description = ""
+requires-python = ">=3.9"
+authors = [
+    { name = "Sophia S.", email = "eroque-d@student.42sp.org.br" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: 42 Unlicense",
+]
+dependences = [
+    "pandas>=2.2.3",
+    "numpy>=2.1.2",
+]
+
+[project.optional-dependences]
+dev = [
+    "pytest>=8.0.0",
+    "black>=24.0.0",
+]
+
+[tool.black]
+line-lenght = 88
