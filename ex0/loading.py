@@ -66,14 +66,17 @@ def run_lab_experiment() -> None:
         print(f"  Using pip:    pip install {libs_str}")
         print(f"  Using Poetry: poetry add {libs_str}\n")
 
+    status_msg = (
+            "All reagents present and accounted for."
+            if use_reagents
+            else "WARNING: Missing reagents in the environment!"
+        )
+
     comparative_report = f"""\npip vs Poetry:
-requirements.txt declares what to install; pip resolves it at install time.
-pyproject.toml declares the same constraints, and Poetry pins the resolved
-versions in poetry.lock so every install is identical.
-{
-    "All reagents present and accounted for."
-    if use_reagents else "WARNING: Missing reagents in the environment!"
-}"""
+    requirements.txt declares what to install; pip resolves it at install time.
+    pyproject.toml declares the same constraints, and Poetry pins the resolved
+    versions in poetry.lock so every install is identical.
+    {status_msg}"""
 
     print(comparative_report)
 
